@@ -1,0 +1,68 @@
+
+{% extends 'boudy/base.html' %}
+
+{% block content %}
+
+ <div class="page">
+     <div class="individu">
+        <a href="{% url 'individu-detail' choix.id %}">{{ choix.nom | upper }} {{ choix.prenom }} <br> {{ choix.dateNaissance }} / {{ choix.dateDeces }}</a>
+     </div>
+
+      <div class="parents">
+     {% for parent in parents %}
+       <a href="{% url 'individu-detail' parent.id %}">{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance}} / {{ parent.dateDeces}}</a>
+     {% endfor %} 
+      </div>
+
+      <div class="grandparents">
+     {% for parent in gParents %}
+         {%if parent.nom %}
+            <a href="{% url 'individu-detail' parent.id %}">{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance}} / {{ parent.dateDeces}}</a>
+         {%else%}
+            <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+         {%endif%}
+     {% endfor %} 
+      </div>
+    
+      <div class="arrieregrandparents">
+     {% for parent in agParents %}
+         {%if parent.nom %}
+            <a href="{% url 'individu-detail' parent.id %}">{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance}} / {{ parent.dateDeces}}</a>
+         {%else%}
+            <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+          {%endif%}
+      {% endfor %} 
+      </div>
+
+      <div class="aieulles">
+     {% for parent in aieulle %}
+        {%if parent.nom %}
+            <a href="{% url 'individu-detail' parent.id %}">{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance}} / {{ parent.dateDeces}}</a>
+         {%else%}
+            <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+          {%endif%}
+      {% endfor %} 
+      </div>
+
+      {%if aieux == 16 %}
+      <div class="baieulles">
+         {% for parent in baieulle1 %}
+               <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+         {% endfor %} 
+         {% for parent in baieulle2 %}
+            <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+         {% endfor %} 
+      </div>
+      {% else %}
+      <div class="baieulles1">
+         {% for parent in baieulle1 %}
+               <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+         {% endfor %} 
+      {% for parent in baieulle2 %}
+            <div>{{ parent.nom | upper}}  {{parent.prenom}} <br> {{ parent.dateNaissance }} / {{ parent.dateDeces }}</div>
+      {% endfor %} 
+      </div>
+      {% endif%}
+ </div>
+
+{% endblock %}

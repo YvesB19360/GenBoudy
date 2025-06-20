@@ -1,0 +1,19 @@
+{% extends 'boudy/base.html' %}
+
+{% block content %}
+
+<nav>
+    <button>
+        <a href="javascript:history.go(-1)">RETOUR</a> 
+    </button>
+</nav>
+
+<img src = "{{fichier}}" width="1000" height="1200">
+
+{%if fichier2 %}
+    <img src = "{{fichier2}}" width="1000" height="1200">
+{%endif%}
+
+{% endblock %}
+
+ 

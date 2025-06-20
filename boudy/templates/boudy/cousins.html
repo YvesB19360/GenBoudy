@@ -1,0 +1,14 @@
+{% extends 'boudy/base.html' %}
+
+{% block content %}
+
+<a> Coucou les cousins </a>
+
+{% for cousin in cousins %}
+        <div class = {{cousin.prenom}}>
+            <a href = "{% url 'cousins-details' cousin.id %}"><img src = "/static/boudy/fiches/cousins/{{cousin.prenom}}.jpg", width="200px", height="180"
+            , title =  {{cousin.prenom}}{{cousin.nom}} ></a>
+         </div>  
+{% endfor %} 
+
+{% endblock %} 

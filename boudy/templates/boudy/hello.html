@@ -1,0 +1,47 @@
+{% extends 'boudy/base.html' %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    Les membres de la famille dont l'ascendance est consultable sont : 
+    <ul>
+        {% for famille in familles %}
+        {% if famille.id < 8 or famille.id > 31 and famille.id < 35 %}
+            <ol> <a href="{% url 'famille-detail' famille.id %}">{{ famille.nom|upper }} {{ famille.prenom }}</a></ol>
+            {% if famille.id == 1%}      
+                <div class = {{famille.prenom}}>
+                    <img src = "/static/boudy/fiches/{{famille.prenom}}.jpg", width="300px", height="400px">
+                </div>
+            {% elif famille.id == 2%}      
+                <div class = {{famille.prenom}}>
+                    <img src = "/static/boudy/fiches/{{famille.prenom}}.jpg", width="180px", height="220px">
+                </div>
+            {% elif famille.id == 4%}      
+                <div class = {{famille.prenom}}>
+                    <img src = "/static/boudy/fiches/{{famille.prenom}}.jpg", width="240px", height="180px">
+                </div>
+            {% elif famille.id == 6 or famille.id == 7%}      
+                <div class = {{famille.prenom}}>
+                    <img src = "/static/boudy/fiches/{{famille.prenom}}.jpg", width="190", height="100px">
+                </div>
+            {% elif famille.id == 33%}      
+                <div class = {{famille.prenom}}>
+                    <img src = "/static/boudy/fiches/{{famille.prenom}}.jpg", width="220", height="150px">
+                </div>
+            {%endif%}
+        {%endif%}
+        {% endfor %}
+    </ul> 
+</div>
+
+{% for ancetre in ancetres %}
+<div class = {{ancetre}}>
+    <img src = "/static/boudy/fiches/{{ancetre}}.jpg", width="150px", height="150px">
+</div>
+{% endfor %}
+
+<div class = "mohamed">
+    <img src = "/static/boudy/fiches/mohamed.jpg", width="190px", height="200px">
+</div>
+
+{% endblock %} 

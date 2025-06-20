@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<html>
+    <head><title>Famille BOUDY</title></head>
+    <link rel="stylesheet" href="{% static 'boudy/styles.css' %}" />
+   
+    <body>
+
+        <nav>
+            <button>
+                 <a href="{% url 'acceuil' %}">Retour à l'acceuil</a>
+            </button>
+
+            <button>
+                 <a href="{% url 'cousins' %}">Cousins - Oncles -Tantes</a>
+            </button>
+            
+             <button>
+                 <a href="{% url 'melimelo' %}">Méli-Mélo</a>
+            </button>
+        </nav>
+    
+        <h1>Généalogie de la famille des descendants de Yves BOUDY et Abassia ZENAZEL</h1>
+ 
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

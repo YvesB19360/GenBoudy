@@ -1,0 +1,89 @@
+{% extends 'boudy/base.html' %}
+
+{% block content %}
+
+    <ul>
+        {% for melimelo in melimelos%}
+        
+        <ol> <a href="{% url 'melimelo-details' melimelo.id %}">{{ melimelo.nom|upper }} {{ melimelo.prenom }}</a></ol>
+ 
+        {%if melimelo.id == 1 %}
+        <div class = "emile">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="200px", height="250"></a>
+            <p>Emile Boudy<br>
+            marié avec Madeleine Rigal</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 5 %}
+        <div class = "mimi">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="520px", height="350"></a>
+            <p>Hyppolithe Boudy, Antoine Pacini, Lucienne Delmas, Pierrette et Geneviève Boudy, Fernand Valade<br>
+            Jean Pierre Boudy               Françoise Boudy              (1951 ou 1952)</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 10 %}
+        <div class = "abassia">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="520px", height="350"></a>
+            <p>Jeanine Cheze, Gaston Boudy, Abassia Zénazel, Yves Boudy, Odette Sanchez<br>
+            Louis Cheze, Clémence Bouillaguet, Jean Louis Cheze</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 11 %}
+        <div class = "jeanpierre">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="180px", height="120"></a>
+            <p>Jean Pierre Boudy, Claire Vergne<br>
+            Deux filles : Agnès, Nathalie et un fils : Stéphane<br>
+            Stéphana a trois enfants : Paul, Philémon et Ismaël Boudy</p>>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 13 %}
+        <div class = "francoise">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="180px", height="120"></a>
+            <p>Françoise Boudy, Gérard Merecier<br>
+            Un fils : Didier Mercier (marié sans enfant)</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 15 %}
+        <div class = "jacques">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="180px", height="120"></a>
+            <p>Jacques Pacini, Marie Claude Paredon<br>
+            Une fille : Sophie et un fils : Pierre Pacini</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 17 %}
+        <div class = "christine">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="180px", height="120"></a>
+            <p>Manuel Muro, Christine Valade<br>
+            Une fille : Angélique et un fils : Sébastien Muro</p>
+        </div>
+        {%endif%}
+
+        {%if melimelo.id == 21 %}
+        <div class = "martine">
+            <a href="{% url 'melimelo-details' melimelo.id %}"></a><img src = "/static/boudy/fiches/melimelo/{{melimelo.prenom}}.jpg"
+            , width="180px", height="120"></a>
+            <p>Jean Louis Cheze, Martine Cheze, Odette Sanchez<br>
+            Martine a deux fils : Vincent et Anthony Khaddour</p>
+        </div>
+        {%endif%}
+
+        {%endfor%}
+
+    </ul>
+
+{% endblock %} 
+
+
